@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FlashStudy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>FlashStudy</h1>
+        <div class="nav-links">
+            <button id="btn-go-study" class="nav-btn">Study</button>
+            <button id="btn-go-manage" class="nav-btn">Manage</button>
+        </div>
+    </nav>
+
+    <main id="app-container">
+        <!-- Study View -->
+        <section id="view-study" class="view">
+            <div id="study-empty-state" class="empty-state hidden">
+                <p>No cards available. Create some in the Manage tab!</p>
+                <button onclick="app.switchView('manage')" class="btn-primary">Create Cards</button>
+            </div>
+
+            <div id="study-session" class="hidden">
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                    <span id="progress-text">0/0</span>
+                </div>
+
+                <div class="card-container">
+                    <div class="card" id="flashcard">
+                        <div class="card-face card-front">
+                            <p id="card-question">Question?</p>
+                            <small>Tap to flip</small>
+                        </div>
+                        <div class="card-face card-back">
+                            <p id="card-answer">Answer!</p>
+                            <small>Tap to flip back</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study-controls hidden" id="study-controls">
+                    <button id="btn-mark-review" class="btn-review">Needs Review</button>
+                    <button id="btn-mark-known" class="btn-known">Known</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage View -->
+        <section id="view-manage" class="view hidden">
+            <div class="manage-header">
+                <h2>Your Deck</h2>
+                <button id="btn-add-card" class="btn-primary">+ Add Card</button>
+            </div>
+
+            <div id="cards-list" class="cards-list"></div>
+
+            <!-- Modal for Adding/Editing -->
+            <div id="card-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3 id="modal-title">Add Card</h3>
+                    <div class="form-group">
+                        <label>Question</label>
+                        <textarea id="input-question" placeholder="Enter the question..." rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Answer</label>
+                        <textarea id="input-answer" placeholder="Enter the answer..." rows="3"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="btn-modal-cancel" class="btn-secondary">Cancel</button>
+                        <button id="btn-modal-save" class="btn-primary">Save Card</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
