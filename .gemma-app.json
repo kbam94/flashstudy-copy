@@ -1,0 +1,7 @@
+{
+  "name": "FlashStudy",
+  "description": "A polished mobile-first flashcard application with flip animations and progress tracking.",
+  "model": "google/gemma-4-31b-it",
+  "prompt": "Build me a polished mobile-first flashcard study application. Users should be able to create flashcards with a question and answer, edit cards, delete cards, study cards one at a time, reveal the answer, and mark each card as known or needs review. Show study progress during a session. Persist flashcards and study results in localStorage. Use a dark modern mobile-first interface with a card-flip style interaction. Use only HTML, CSS, and plain JavaScript.",
+  "generatedAt": "2026-09-25T07:57:22.090Z"
+}
